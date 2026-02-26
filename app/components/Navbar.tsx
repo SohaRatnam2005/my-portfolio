@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
+    { href: "/experiments", label: "Experiments" },
     { href: "/blogs", label: "Blogs" },
     { href: "/contact", label: "Contact" },
 ];
@@ -21,7 +21,7 @@ export default function Navbar() {
                     href="/"
                     className="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-accent-dark"
                 >
-                    &lt;Portfolio /&gt;
+                    Tanushree RD
                 </Link>
 
                 {/* Navigation Links */}
@@ -33,8 +33,8 @@ export default function Navbar() {
                                 <Link
                                     href={href}
                                     className={`relative rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${isActive
-                                            ? "bg-accent-soft text-accent-dark"
-                                            : "text-muted hover:bg-card-hover hover:text-foreground"
+                                        ? "bg-accent-soft text-accent-dark"
+                                        : "text-muted hover:bg-card-hover hover:text-foreground"
                                         }`}
                                 >
                                     {label}

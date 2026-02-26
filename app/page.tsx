@@ -1,17 +1,6 @@
 import Link from "next/link";
 
-const techStack = [
-  { name: "React", icon: "⚛️" },
-  { name: "Next.js", icon: "▲" },
-  { name: "TypeScript", icon: "🔷" },
-  { name: "Django", icon: "🐍" },
-  { name: "Tailwind CSS", icon: "🎨" },
-  { name: "Firebase", icon: "🔥" },
-  { name: "Node.js", icon: "🟢" },
-  { name: "MongoDB", icon: "🍃" },
-];
-
-const projects = [
+const experiments = [
   {
     title: "AI Wellness Hub",
     description:
@@ -52,36 +41,75 @@ const blogs = [
 export default function Home() {
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-6 py-16">
-      {/* ───────── Hero / Name & College ───────── */}
-      <section className="rounded-xl bg-card p-8 shadow-md shadow-shadow sm:p-12">
-        <p className="text-sm font-semibold tracking-widest uppercase text-accent-dark">
-          Welcome to my portfolio
-        </p>
-        <h1 className="mt-3 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
-          Hi, I&apos;m{" "}
-          <span className="text-accent-dark">Your Name</span>
-        </h1>
-        <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
-          B.Tech Student at{" "}
-          <span className="font-semibold text-foreground">Your College Name</span>{" "}
-          — passionate about building modern web experiences with clean code and
-          thoughtful design.
-        </p>
+      {/* ───────── Hero / Name & Intro ───────── */}
+      <section className="relative overflow-hidden rounded-xl bg-card p-8 shadow-md shadow-shadow sm:p-12 lg:p-16">
+        <div className="grid gap-12 md:grid-cols-2 md:items-center">
+          {/* Left Side: Content */}
+          <div className="relative z-10 flex flex-col items-start">
+            <p className="text-sm font-semibold tracking-widest uppercase text-accent-dark">
+              Welcome to my corner of the internet
+            </p>
+            <h1 className="mt-4 text-5xl font-extrabold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+              Hi, I&apos;m{" "}
+              <span className="text-accent-dark">Tanushree RD</span>
+            </h1>
+            <p className="mt-6 text-xl font-medium text-foreground">
+              Computer Science Undergraduate
+            </p>
+            <p className="mt-2 text-base leading-relaxed text-muted">
+              Crafting beautiful and functional web apps.
+            </p>
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/projects"
-            className="rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-foreground transition-all duration-200 hover:bg-accent-dark hover:text-white hover:shadow-lg hover:shadow-shadow"
-          >
-            View Projects
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-xl border border-border px-6 py-3 text-sm font-semibold text-foreground transition-all duration-200 hover:border-accent hover:bg-card-hover"
-          >
-            Get in Touch
-          </Link>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/experiments"
+                className="rounded-xl bg-accent px-8 py-3.5 text-sm font-bold text-foreground shadow-sm shadow-shadow transition-all duration-300 hover:-translate-y-1 hover:bg-accent-dark hover:text-white hover:shadow-lg hover:shadow-shadow"
+              >
+                View Experiments
+              </Link>
+              <Link
+                href="/contact"
+                className="rounded-xl border-2 border-accent-soft px-8 py-3.5 text-sm font-bold text-foreground transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:bg-card-hover"
+              >
+                Say Hello
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Side: Abstract Blob Graphic */}
+          <div className="relative hidden w-full justify-center md:flex">
+            {/* Subtle glow / blur drop-shadows behind */}
+            <div className="absolute top-1/2 left-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-soft opacity-70 blur-3xl" />
+            <div className="absolute top-1/2 left-1/3 h-56 w-56 -translate-y-1/3 rounded-full bg-secondary opacity-50 blur-3xl" />
+
+            {/* Animated Blob */}
+            <div className="relative z-10 h-72 w-72 animate-[spin_20s_linear_infinite] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-gradient-to-tr from-accent to-secondary opacity-80 shadow-[0_4px_30px_rgba(248,180,198,0.3)] transition-all duration-500 hover:scale-105 hover:opacity-100" />
+          </div>
         </div>
+      </section>
+
+      {/* ───────── About ───────── */}
+      <section aria-label="About me" className="mt-12 rounded-xl bg-card p-8 shadow-md shadow-shadow sm:p-12">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          About Me
+        </h2>
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">
+          I&apos;m a CS undergrad who enjoys making websites look clean and feel good to use.
+          Currently learning full-stack development and exploring how design and functionality
+          come together in real web apps. I care about the little details — the way a button
+          feels when you hover over it, the whitespace that gives a layout room to breathe,
+          the flow that makes a visitor want to keep scrolling.
+        </p>
+      </section>
+
+      {/* ───────── Hobbies ───────── */}
+      <section aria-label="Hobbies" className="mt-12 rounded-xl bg-card p-8 shadow-md shadow-shadow sm:p-12">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          When I&apos;m Not Coding
+        </h2>
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">
+          Apart from coding, I spend time playing football and throwball, occasionally playing chess, reading, singing, and also exploring things like fashion designing and makeup as creative interests.
+        </p>
       </section>
 
       {/* ───────── Tech Stack ───────── */}
@@ -89,38 +117,24 @@ export default function Home() {
         <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           Tech Stack
         </h2>
-        <p className="mt-2 text-sm text-muted">
-          Technologies &amp; tools I work with on a daily basis.
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-muted">
+          C, C++, HTML, CSS, JavaScript, React, Next.js, Node.js, Tailwind CSS, Firebase, Python
         </p>
-
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {techStack.map((tech) => (
-            <div
-              key={tech.name}
-              className="flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 transition-all duration-200 hover:border-accent hover:bg-card-hover hover:shadow-sm hover:shadow-shadow"
-            >
-              <span className="text-lg">{tech.icon}</span>
-              <span className="text-sm font-medium text-foreground">
-                {tech.name}
-              </span>
-            </div>
-          ))}
-        </div>
       </section>
 
-      {/* ───────── Projects Overview ───────── */}
-      <section aria-label="Projects overview" className="mt-12 rounded-xl bg-card p-8 shadow-md shadow-shadow sm:p-12">
+      {/* ───────── Experiments Overview ───────── */}
+      <section aria-label="Experiments overview" className="mt-12 rounded-xl bg-card p-8 shadow-md shadow-shadow sm:p-12">
         <div className="flex items-end justify-between">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Projects
+              Experiments
             </h2>
             <p className="mt-2 text-sm text-muted">
-              A few highlights from my recent work.
+              A few highlights from things I&apos;ve been building and exploring.
             </p>
           </div>
           <Link
-            href="/projects"
+            href="/experiments"
             className="hidden text-sm font-medium text-accent-dark transition-colors hover:text-accent sm:inline-block"
           >
             View all →
@@ -128,19 +142,19 @@ export default function Home() {
         </div>
 
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {experiments.map((experiment) => (
             <article
-              key={project.title}
+              key={experiment.title}
               className="group flex flex-col rounded-xl border border-border bg-background p-6 transition-all duration-300 hover:border-accent hover:bg-card-hover hover:shadow-md hover:shadow-shadow"
             >
               <h3 className="text-lg font-semibold text-foreground transition-colors duration-200 group-hover:text-accent-dark">
-                {project.title}
+                {experiment.title}
               </h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
-                {project.description}
+                {experiment.description}
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
+                {experiment.tags.map((tag) => (
                   <span
                     key={tag}
                     className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-foreground"
@@ -154,10 +168,10 @@ export default function Home() {
         </div>
 
         <Link
-          href="/projects"
+          href="/experiments"
           className="mt-6 inline-block text-sm font-medium text-accent-dark transition-colors hover:text-accent sm:hidden"
         >
-          View all projects →
+          View all experiments →
         </Link>
       </section>
 
@@ -169,7 +183,7 @@ export default function Home() {
               Latest from the Blog
             </h2>
             <p className="mt-2 text-sm text-muted">
-              Thoughts, tutorials, and insights on web development.
+              Thoughts, tutorials, and things I&apos;ve been learning along the way.
             </p>
           </div>
           <Link
@@ -212,60 +226,54 @@ export default function Home() {
         </Link>
       </section>
 
-      {/* ───────── Contact Section ───────── */}
-      <section aria-label="Contact" className="mt-12 rounded-xl bg-card p-8 shadow-md shadow-shadow sm:p-12">
+      {/* ───────── Connect Section ───────── */}
+      <section aria-label="Connect" className="mt-12 rounded-xl bg-card p-8 shadow-md shadow-shadow sm:p-12">
         <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           Let&apos;s Connect
         </h2>
-        <p className="mt-2 max-w-xl text-sm text-muted">
-          Have a project idea, want to collaborate, or just want to say hello?
+        <p className="mt-2 text-sm text-muted">
+          Want to collaborate on something, chat about web dev, or just say hi?
           I&apos;d love to hear from you.
         </p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-4">
           <a
-            href="mailto:your.email@example.com"
-            className="flex items-center gap-4 rounded-xl border border-border bg-background p-5 transition-all duration-200 hover:border-accent hover:bg-card-hover hover:shadow-md hover:shadow-shadow"
-          >
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-lg">
-              ✉️
-            </span>
-            <div>
-              <p className="text-xs text-muted">Email</p>
-              <p className="text-sm font-medium text-foreground">
-                your.email@example.com
-              </p>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com"
+            href="https://github.com/Tanushree-RD"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 rounded-xl border border-border bg-background p-5 transition-all duration-200 hover:border-accent hover:bg-card-hover hover:shadow-md hover:shadow-shadow"
+            className="text-base font-medium text-accent-dark transition-colors hover:text-accent underline underline-offset-4"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-lg">
-              🔗
-            </span>
-            <div>
-              <p className="text-xs text-muted">GitHub</p>
-              <p className="text-sm font-medium text-foreground">@yourusername</p>
-            </div>
+            GitHub
           </a>
-
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/tanushree-r-5a250a370"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-4 rounded-xl border border-border bg-background p-5 transition-all duration-200 hover:border-accent hover:bg-card-hover hover:shadow-md hover:shadow-shadow"
+            className="text-base font-medium text-accent-dark transition-colors hover:text-accent underline underline-offset-4"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-lg">
-              💼
-            </span>
-            <div>
-              <p className="text-xs text-muted">LinkedIn</p>
-              <p className="text-sm font-medium text-foreground">Your Name</p>
-            </div>
+            LinkedIn
+          </a>
+          <a
+            href="https://www.instagram.com/tanu_shree_rd"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-base font-medium text-accent-dark transition-colors hover:text-accent underline underline-offset-4"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://x.com/serotoninwave"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-base font-medium text-accent-dark transition-colors hover:text-accent underline underline-offset-4"
+          >
+            Twitter / X
+          </a>
+          <a
+            href="mailto:tanushreer021@gmail.com"
+            className="text-base font-medium text-accent-dark transition-colors hover:text-accent underline underline-offset-4"
+          >
+            Email
           </a>
         </div>
 
@@ -274,7 +282,7 @@ export default function Home() {
             href="/contact"
             className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-foreground transition-all duration-200 hover:bg-accent-dark hover:text-white hover:shadow-lg hover:shadow-shadow"
           >
-            Send a Message →
+            Contact Page →
           </Link>
         </div>
       </section>

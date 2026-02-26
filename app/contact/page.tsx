@@ -1,25 +1,30 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact | Portfolio",
+    title: "Contact | Tanushree RD",
     description: "Get in touch — I'd love to hear from you.",
 };
 
 const socials = [
     {
         label: "GitHub",
-        href: "https://github.com",
-        icon: "🔗",
+        href: "https://github.com/Tanushree-RD",
     },
     {
         label: "LinkedIn",
-        href: "https://linkedin.com",
-        icon: "💼",
+        href: "https://www.linkedin.com/in/tanushree-r-5a250a370",
+    },
+    {
+        label: "Instagram",
+        href: "https://www.instagram.com/tanu_shree_rd",
     },
     {
         label: "Twitter / X",
-        href: "https://x.com",
-        icon: "🐦",
+        href: "https://x.com/serotoninwave",
+    },
+    {
+        label: "Email",
+        href: "mailto:tanushreer021@gmail.com",
     },
 ];
 
@@ -32,8 +37,8 @@ export default function ContactPage() {
                     Contact
                 </h1>
                 <p className="mt-3 max-w-2xl text-base text-muted">
-                    Have a project in mind, want to collaborate, or just want to say
-                    hello? Feel free to reach out — I&apos;d love to connect.
+                    Want to collaborate on something, chat about web dev, or just say hi?
+                    I&apos;d love to connect — feel free to drop a message.
                 </p>
             </header>
 
@@ -115,15 +120,11 @@ export default function ContactPage() {
                                 <a
                                     key={social.label}
                                     href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-3 rounded-xl border border-border bg-background px-5 py-4 transition-all duration-200 hover:border-accent hover:bg-card-hover hover:shadow-md hover:shadow-shadow"
+                                    target={social.label === "Email" ? undefined : "_blank"}
+                                    rel={social.label === "Email" ? undefined : "noopener noreferrer"}
+                                    className="w-fit text-base font-medium text-accent-dark transition-colors hover:text-accent underline underline-offset-4"
                                 >
-                                    <span className="text-xl">{social.icon}</span>
-                                    <span className="text-sm font-medium text-foreground">
-                                        {social.label}
-                                    </span>
-                                    <span className="ml-auto text-xs text-muted">↗</span>
+                                    {social.label}
                                 </a>
                             ))}
                         </div>
