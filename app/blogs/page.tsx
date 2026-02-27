@@ -49,7 +49,7 @@ export default function BlogsPage() {
                 {blogs.map((blog) => (
                     <article
                         key={blog.title}
-                        className="group cursor-pointer border border-border p-5 transition-colors duration-200 hover:border-accent-dark/40"
+                        className="group cursor-pointer border border-border p-5 transition-all duration-200 hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-lg hover:shadow-shadow"
                     >
                         <div className="flex items-center gap-2 text-[11px] text-muted">
                             <time>{blog.date}</time>

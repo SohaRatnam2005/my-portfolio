@@ -58,7 +58,7 @@ export default function ExperimentsPage() {
                 {experiments.map((experiment) => (
                     <article
                         key={experiment.title}
-                        className="border border-border p-5 transition-colors duration-200 hover:border-accent-dark/40"
+                        className="border border-border p-5 transition-all duration-200 hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-lg hover:shadow-shadow"
                     >
                         <h2 className="text-sm font-semibold text-foreground">
                             {experiment.title}
