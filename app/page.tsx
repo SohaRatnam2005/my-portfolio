@@ -8,6 +8,7 @@ import {
   FiTwitter,
   FiMail,
 } from "react-icons/fi";
+import FadeInSection from "./components/FadeInSection";
 
 const techStack = [
   "c",
@@ -52,7 +53,7 @@ export default function Home() {
       </section>
 
       {/* ───────── About ───────── */}
-      <section className="mb-14">
+      <FadeInSection className="mb-14">
         <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-dark">
           About
         </h2>
@@ -61,10 +62,10 @@ export default function Home() {
           to use. Currently learning backend + web3 mostly with Next.js, Node
           and Tailwind. Also working with Python, DSA and exploring AI/ML.
         </p>
-      </section>
+      </FadeInSection>
 
       {/* ───────── Other than tech ───────── */}
-      <section className="mb-14">
+      <FadeInSection className="mb-14">
         <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-dark">
           Other than tech
         </h2>
@@ -73,10 +74,10 @@ export default function Home() {
           clothes. I enjoy makeup as a creative skill, and spend my free time
           reading, playing football, or a game of chess.
         </p>
-      </section>
+      </FadeInSection>
 
       {/* ───────── Education ───────── */}
-      <section className="mb-14">
+      <FadeInSection className="mb-14">
         <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-dark">
           Education
         </h2>
@@ -88,10 +89,10 @@ export default function Home() {
         </p>
         <p className="mt-1 text-xs text-muted">2025 – 2029</p>
         <p className="mt-1 text-xs text-muted">CGPA: Yet to be announced</p>
-      </section>
+      </FadeInSection>
 
       {/* ───────── Tech Stack ───────── */}
-      <section className="mb-16">
+      <FadeInSection className="mb-16">
         <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-dark">
           Tech Stack
         </h2>
@@ -107,7 +108,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* ───────── Socials ───────── */}
       <section className="mb-10">

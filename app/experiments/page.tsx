@@ -8,34 +8,29 @@ export const metadata: Metadata = {
 
 const experiments = [
     {
-        title: "AI Wellness Hub",
+        title: "Lunara",
         description:
-            "A full-stack wellness platform powered by AI for personalized health recommendations and activity tracking.",
-        tags: ["Next.js", "Python", "TailwindCSS", "OpenAI"],
-        github: "https://github.com/Tanushree-RD",
-        live: "#",
+            "Currently working on Lunara as an ongoing personal project.",
+        status: "In Progress",
+        github: "https://github.com/Tanushree-RD/lunara",
     },
     {
-        title: "Portfolio Website",
+        title: "AI Job Checker",
         description:
-            "A modern, responsive developer portfolio built with Next.js App Router, TypeScript, and Tailwind CSS.",
-        tags: ["Next.js", "TypeScript", "TailwindCSS"],
-        github: "https://github.com/Tanushree-RD/my-portfolio",
-        live: "#",
+            "A basic project exploring AI-based resume and job description comparison.",
+        github: "https://github.com/Tanushree-RD/ai-job-checker",
     },
     {
-        title: "E-Commerce Dashboard",
+        title: "Particle Playground",
         description:
-            "An analytics dashboard for e-commerce businesses with real-time data visualization and sales tracking.",
-        tags: ["React", "Chart.js", "Firebase", "TailwindCSS"],
-        github: "https://github.com/Tanushree-RD",
+            "A simple interactive particle simulation built for visual experimentation.",
+        github: "https://github.com/Tanushree-RD/particle-playground",
     },
     {
-        title: "Chat Application",
+        title: "Vibe Quiz",
         description:
-            "A real-time messaging app with WebSocket support, user authentication, and responsive design.",
-        tags: ["Node.js", "Socket.io", "MongoDB", "React"],
-        github: "https://github.com/Tanushree-RD",
+            "A fun quiz-based web app built as a learning project.",
+        github: "https://github.com/Tanushree-RD/vibe-quiz",
     },
 ];
 
@@ -60,45 +55,29 @@ export default function ExperimentsPage() {
                         key={experiment.title}
                         className="border border-border p-5 transition-all duration-200 hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-lg hover:shadow-shadow"
                     >
-                        <h2 className="text-sm font-semibold text-foreground">
-                            {experiment.title}
-                        </h2>
+                        <div className="flex items-center gap-3">
+                            <h2 className="text-sm font-semibold text-foreground">
+                                {experiment.title}
+                            </h2>
+                            {experiment.status && (
+                                <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[10px] font-medium text-accent-dark">
+                                    {experiment.status}
+                                </span>
+                            )}
+                        </div>
                         <p className="mt-2 text-xs leading-relaxed text-muted">
                             {experiment.description}
                         </p>
 
-                        <div className="mt-3 flex flex-wrap gap-x-2 gap-y-1">
-                            {experiment.tags.map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="text-[11px] text-muted/70"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-
-                        <div className="mt-3 flex gap-4">
-                            {experiment.github && (
-                                <Link
-                                    href={experiment.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
-                                >
-                                    GitHub
-                                </Link>
-                            )}
-                            {experiment.live && (
-                                <Link
-                                    href={experiment.live}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
-                                >
-                                    Live
-                                </Link>
-                            )}
+                        <div className="mt-3">
+                            <Link
+                                href={experiment.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
+                            >
+                                GitHub
+                            </Link>
                         </div>
                     </article>
                 ))}
@@ -106,3 +85,4 @@ export default function ExperimentsPage() {
         </main>
     );
 }
+

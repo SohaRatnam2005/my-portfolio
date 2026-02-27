@@ -32,9 +32,9 @@ export default function Navbar() {
                             <li key={href}>
                                 <Link
                                     href={href}
-                                    className={`text-xs tracking-tight transition-colors ${isActive
-                                            ? "text-foreground underline decoration-foreground underline-offset-4"
-                                            : "text-muted hover:text-foreground"
+                                    className={`relative text-xs tracking-tight transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[1.5px] after:bg-foreground after:transition-all after:duration-300 after:ease-out ${isActive
+                                            ? "text-foreground after:w-full"
+                                            : "text-muted hover:text-foreground after:w-0 hover:after:w-full"
                                         }`}
                                 >
                                     {label}
