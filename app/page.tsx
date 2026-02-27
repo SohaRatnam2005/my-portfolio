@@ -30,13 +30,13 @@ export default function Home() {
     <main className="mx-auto min-h-screen max-w-2xl px-6 py-16 font-[family-name:var(--font-jetbrains)]">
       {/* ───────── Intro ───────── */}
       <section className="mb-16">
-        <p className="text-sm leading-relaxed text-foreground">
-          hi, i&apos;m tanushree.
-        </p>
-        <p className="mt-4 text-sm leading-relaxed text-foreground">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+          Hyy I&apos;m Tanushree
+        </h1>
+        <p className="mt-4 text-base font-medium leading-relaxed text-foreground md:text-lg">
           cs undergraduate.
         </p>
-        <p className="mt-4 text-xs leading-relaxed text-muted">
+        <p className="mt-4 text-sm leading-relaxed text-muted">
           learning backend + web3 mostly with nextjs, node and tailwind.
           <br />
           also doing python, dsa and exploring ai/ml.
