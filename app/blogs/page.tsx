@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Blogs | Tanushree RD",
-    description: "Thoughts, tutorials, and insights on web development and tech.",
+    description:
+        "Thoughts, tutorials, and insights on web development and tech.",
 };
 
 const blogs = [
@@ -31,37 +32,39 @@ const blogs = [
 
 export default function BlogsPage() {
     return (
-        <main className="mx-auto min-h-screen max-w-6xl px-6 py-16">
+        <main className="mx-auto min-h-screen max-w-2xl px-6 py-16 font-[family-name:var(--font-jetbrains)]">
             {/* Header */}
-            <header className="mb-10 rounded-xl bg-card p-8 shadow-md shadow-shadow sm:p-12">
-                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                    Blogs
+            <header className="mb-12">
+                <h1 className="text-lg font-semibold tracking-tight text-foreground">
+                    Blog
                 </h1>
-                <p className="mt-3 max-w-2xl text-base text-muted">
-                    I write about web development, design patterns, and the tools I use
-                    day-to-day. Here are some of my latest posts.
+                <p className="mt-2 text-sm leading-relaxed text-muted">
+                    Thoughts on web development, design patterns, and the tools I use
+                    day-to-day.
                 </p>
             </header>
 
             {/* Blog List */}
-            <section aria-label="Blog posts" className="flex flex-col gap-6">
+            <section aria-label="Blog posts" className="flex flex-col gap-4">
                 {blogs.map((blog) => (
                     <article
                         key={blog.title}
-                        className="group cursor-pointer rounded-xl border border-border bg-card p-6 shadow-md shadow-shadow transition-all duration-300 hover:border-accent hover:bg-card-hover hover:shadow-lg hover:shadow-shadow"
+                        className="group cursor-pointer border border-border p-5 transition-colors duration-200 hover:border-accent-dark/40"
                     >
-                        <div className="flex items-center gap-3 text-xs text-muted">
+                        <div className="flex items-center gap-2 text-[11px] text-muted">
                             <time>{blog.date}</time>
-                            <span className="h-1 w-1 rounded-full bg-accent" />
+                            <span>·</span>
                             <span>{blog.readTime}</span>
                         </div>
-                        <h2 className="mt-3 text-xl font-semibold text-foreground group-hover:text-accent-dark transition-colors duration-200">
+
+                        <h2 className="mt-2 text-sm font-semibold text-foreground">
                             {blog.title}
                         </h2>
-                        <p className="mt-2 text-sm leading-relaxed text-muted">
+                        <p className="mt-2 text-xs leading-relaxed text-muted">
                             {blog.excerpt}
                         </p>
-                        <span className="mt-4 inline-block text-sm font-medium text-accent-dark opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+
+                        <span className="mt-3 inline-block text-xs text-accent-dark underline decoration-border underline-offset-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                             Read more →
                         </span>
                     </article>

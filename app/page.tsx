@@ -1,152 +1,95 @@
-import Link from "next/link";
-import FadeInSection from "./components/FadeInSection";
-
-const experiments = [
-  {
-    title: "AI Wellness Hub",
-    description: "A full-stack wellness platform powered by AI.",
-  },
-  {
-    title: "Portfolio Website",
-    description: "A modern developer portfolio built with Next.js App Router.",
-  },
-  {
-    title: "E-Commerce Dashboard",
-    description: "An analytics dashboard for e-commerce with real-time data visualization.",
-  },
+const techStack = [
+  "c",
+  "c++",
+  "html",
+  "css",
+  "javascript",
+  "react",
+  "nextjs",
+  "node",
+  "tailwind",
+  "firebase",
+  "python",
+  "git",
+  "github",
 ];
 
-const techStack = [
-  "C",
-  "C++",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Tailwind CSS",
-  "Firebase",
-  "Python",
+const socials = [
+  { label: "github", href: "https://github.com/Tanushree-RD" },
+  {
+    label: "linkedin",
+    href: "https://www.linkedin.com/in/tanushree-r-5a250a370",
+  },
+  { label: "twitter", href: "https://x.com/serotoninwave" },
+  { label: "instagram", href: "https://www.instagram.com/tanu_shree_rd" },
+  { label: "email", href: "mailto:tanushreer021@gmail.com" },
 ];
 
 export default function Home() {
   return (
-    <main className="w-full">
-      {/* ───────── Hero ───────── */}
-      <FadeInSection className="md:snap-start relative flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-hidden px-6 text-center">
-        {/* Subtle background blob */}
-        <div className="absolute top-1/2 left-1/2 -z-10 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent opacity-40 blur-[100px] sm:h-[400px] sm:w-[400px] md:h-[600px] md:w-[600px]" />
-
-        <p className="mb-6 z-10 text-sm font-semibold uppercase tracking-widest text-accent-dark md:text-lg">
-          Welcome to my corner of the internet
+    <main className="mx-auto min-h-screen max-w-2xl px-6 py-16 font-[family-name:var(--font-jetbrains)]">
+      {/* ───────── Intro ───────── */}
+      <section className="mb-16">
+        <p className="text-sm leading-relaxed text-foreground">
+          hi, i&apos;m tanushree.
         </p>
-        <h1 className="z-10 text-6xl font-extrabold leading-tight tracking-tight text-foreground sm:text-7xl md:text-9xl">
-          Tanushree <span className="text-accent-dark">RD</span>
-        </h1>
-        <p className="z-10 mt-8 max-w-2xl text-2xl font-light text-foreground md:text-5xl">
-          Computer Science Undergrad
+        <p className="mt-4 text-sm leading-relaxed text-foreground">
+          cs undergraduate.
         </p>
-
-        <div className="z-10 mt-12 flex flex-col gap-6 sm:flex-row md:mt-16">
-          <Link
-            href="/experiments"
-            className="rounded-full bg-accent px-10 py-4 text-lg font-bold text-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-accent-dark hover:text-white hover:shadow-lg"
-          >
-            View Projects
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-full border-2 border-accent-soft px-10 py-4 text-lg font-bold text-foreground transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:bg-card/50"
-          >
-            Contact Me
-          </Link>
-        </div>
-      </FadeInSection>
-
-      {/* ───────── About ───────── */}
-      <FadeInSection className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center bg-card px-6 text-center">
-        <h2 className="mb-12 text-5xl font-black tracking-tight text-foreground md:text-7xl lg:text-8xl">
-          About Me
-        </h2>
-        <div className="max-w-5xl text-xl font-light leading-relaxed text-muted md:text-4xl md:leading-snug">
-          <p className="mb-8">
-            I&apos;m a developer who cares deeply about the details — the whitespace,
-            the interactions, and the overall flow.
-          </p>
-          <p>
-            When I&apos;m not coding, you can find me playing football,
-            throwball, reading, or exploring fashion design.
-          </p>
-        </div>
-      </FadeInSection>
-
-      {/* ───────── Projects ───────── */}
-      <FadeInSection className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center px-6 text-center">
-        <h2 className="mb-12 text-5xl font-black tracking-tight text-foreground md:text-7xl lg:text-8xl">
-          Projects
-        </h2>
-        <p className="max-w-3xl text-2xl font-light leading-relaxed text-muted md:text-4xl">
-          Building and exploring ideas across full-stack development, design, and AI.
+        <p className="mt-4 text-xs leading-relaxed text-muted">
+          learning backend + web3 mostly with nextjs, node and tailwind.
+          <br />
+          also doing python, dsa and exploring ai/ml.
         </p>
-        <Link
-          href="/experiments"
-          className="mt-16 text-xl font-medium tracking-wide text-accent-dark transition-colors hover:text-accent md:mt-24 md:text-2xl"
-        >
-          View all work →
-        </Link>
-      </FadeInSection>
+        <p className="mt-4 text-xs leading-relaxed text-muted">
+          currently trying to figure out whether i like frontend or just making
+          things look pretty.
+        </p>
+        <p className="mt-4 text-xs leading-relaxed text-muted">
+          i also like playing football, throwball and chess when i&apos;m not
+          coding.
+          <br />
+          sometimes i read, sing or try fashion design and makeup stuff too.
+        </p>
+      </section>
 
       {/* ───────── Tech Stack ───────── */}
-      <FadeInSection className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center bg-card px-6 text-center">
-        <h2 className="mb-16 text-5xl font-black tracking-tight text-foreground md:text-7xl lg:text-8xl">
+      <section className="mb-16">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-dark">
           Tech Stack
         </h2>
-        <div className="flex max-w-6xl flex-wrap justify-center gap-6 md:gap-10 lg:gap-14">
+        <div className="flex flex-wrap gap-2">
           {techStack.map((tech) => (
-            <div
+            <span
               key={tech}
-              className="cursor-default text-4xl font-black tracking-tight text-muted transition-colors hover:text-accent-dark md:text-6xl lg:text-8xl"
+              className="border border-border px-2.5 py-1 text-[11px] text-foreground"
             >
               {tech}
-            </div>
+            </span>
           ))}
         </div>
-      </FadeInSection>
+      </section>
 
-      {/* ───────── Contact ───────── */}
-      <FadeInSection className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center px-6 text-center">
-        <h2 className="mb-12 text-5xl font-black tracking-tight text-foreground md:text-7xl lg:text-8xl">
-          Let&apos;s Connect
+      {/* ───────── Socials ───────── */}
+      <section className="mb-10">
+        <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-dark">
+          Socials
         </h2>
-        <p className="mb-20 max-w-3xl text-2xl font-light text-muted md:text-4xl">
-          Have an idea or just want to chat?
-        </p>
-        <div className="flex flex-col gap-10 sm:flex-row sm:gap-20">
-          <a
-            href="mailto:tanushreer021@gmail.com"
-            className="text-4xl font-bold text-accent-dark decoration-accent-soft decoration-4 underline-offset-8 transition-transform hover:-translate-y-2 hover:text-accent hover:underline md:text-6xl"
-          >
-            Email
-          </a>
-          <a
-            href="https://github.com/Tanushree-RD"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-4xl font-bold text-accent-dark decoration-accent-soft decoration-4 underline-offset-8 transition-transform hover:-translate-y-2 hover:text-accent hover:underline md:text-6xl"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/tanushree-r-5a250a370"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-4xl font-bold text-accent-dark decoration-accent-soft decoration-4 underline-offset-8 transition-transform hover:-translate-y-2 hover:text-accent hover:underline md:text-6xl"
-          >
-            LinkedIn
-          </a>
-        </div>
-      </FadeInSection>
+        <ul className="space-y-2">
+          {socials.map((s) => (
+            <li key={s.label}>
+              <a
+                href={s.href}
+                target={s.label === "email" ? undefined : "_blank"}
+                rel={s.label === "email" ? undefined : "noopener noreferrer"}
+                className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
+              >
+                {s.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }
