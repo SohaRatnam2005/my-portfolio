@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FadeInSection from "./components/FadeInSection";
 
 const experiments = [
   {
@@ -33,7 +34,7 @@ export default function Home() {
   return (
     <main className="w-full">
       {/* ───────── Hero ───────── */}
-      <section className="md:snap-start relative flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-hidden px-6 text-center">
+      <FadeInSection className="md:snap-start relative flex min-h-[100dvh] w-full flex-col items-center justify-center overflow-hidden px-6 text-center">
         {/* Subtle background blob */}
         <div className="absolute top-1/2 left-1/2 -z-10 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent opacity-40 blur-[100px] sm:h-[400px] sm:w-[400px] md:h-[600px] md:w-[600px]" />
 
@@ -52,7 +53,7 @@ export default function Home() {
             href="/experiments"
             className="rounded-full bg-accent px-10 py-4 text-lg font-bold text-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-accent-dark hover:text-white hover:shadow-lg"
           >
-            View Experiments
+            View Projects
           </Link>
           <Link
             href="/contact"
@@ -61,10 +62,10 @@ export default function Home() {
             Contact Me
           </Link>
         </div>
-      </section>
+      </FadeInSection>
 
       {/* ───────── About ───────── */}
-      <section className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center bg-card px-6 text-center">
+      <FadeInSection className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center bg-card px-6 text-center">
         <h2 className="mb-12 text-5xl font-black tracking-tight text-foreground md:text-7xl lg:text-8xl">
           About Me
         </h2>
@@ -78,39 +79,26 @@ export default function Home() {
             throwball, reading, or exploring fashion design.
           </p>
         </div>
-      </section>
+      </FadeInSection>
 
-      {/* ───────── Experiments ───────── */}
-      <section className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center px-6 text-center">
-        <h2 className="mb-16 text-5xl font-black tracking-tight text-foreground md:text-7xl lg:text-8xl">
-          Experiments
+      {/* ───────── Projects ───────── */}
+      <FadeInSection className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center px-6 text-center">
+        <h2 className="mb-12 text-5xl font-black tracking-tight text-foreground md:text-7xl lg:text-8xl">
+          Projects
         </h2>
-        <div className="flex w-full max-w-4xl flex-col gap-16 md:gap-24">
-          {experiments.map((exp) => (
-            <Link
-              href="/experiments"
-              key={exp.title}
-              className="group flex flex-col items-center justify-center transition-transform hover:-translate-y-1"
-            >
-              <h3 className="text-4xl font-bold text-foreground transition-colors duration-300 group-hover:text-accent-dark md:text-6xl">
-                {exp.title}
-              </h3>
-              <p className="mt-6 max-w-2xl text-lg font-light text-muted md:text-3xl">
-                {exp.description}
-              </p>
-            </Link>
-          ))}
-        </div>
+        <p className="max-w-3xl text-2xl font-light leading-relaxed text-muted md:text-4xl">
+          Building and exploring ideas across full-stack development, design, and AI.
+        </p>
         <Link
           href="/experiments"
-          className="mt-20 text-xl font-medium tracking-wide text-accent-dark transition-colors hover:text-accent md:text-2xl"
+          className="mt-16 text-xl font-medium tracking-wide text-accent-dark transition-colors hover:text-accent md:mt-24 md:text-2xl"
         >
-          View all experiments →
+          View all work →
         </Link>
-      </section>
+      </FadeInSection>
 
       {/* ───────── Tech Stack ───────── */}
-      <section className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center bg-card px-6 text-center">
+      <FadeInSection className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center bg-card px-6 text-center">
         <h2 className="mb-16 text-5xl font-black tracking-tight text-foreground md:text-7xl lg:text-8xl">
           Tech Stack
         </h2>
@@ -124,10 +112,10 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </FadeInSection>
 
       {/* ───────── Contact ───────── */}
-      <section className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center px-6 text-center">
+      <FadeInSection className="md:snap-start flex min-h-[100dvh] w-full flex-col items-center justify-center px-6 text-center">
         <h2 className="mb-12 text-5xl font-black tracking-tight text-foreground md:text-7xl lg:text-8xl">
           Let&apos;s Connect
         </h2>
@@ -158,7 +146,7 @@ export default function Home() {
             LinkedIn
           </a>
         </div>
-      </section>
+      </FadeInSection>
     </main>
   );
 }
