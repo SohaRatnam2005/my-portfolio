@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactElement } from "react";
+import Link from "next/link";
 import {
   FiGithub,
   FiLinkedin,
@@ -37,6 +38,23 @@ const socials: { label: string; href: string; icon: ReactElement }[] = [
   { label: "Instagram", href: "https://www.instagram.com/tanu_shree_rd", icon: <FiInstagram /> },
   { label: "Email", href: "mailto:tanushreer021@gmail.com", icon: <FiMail /> },
 ];
+
+const featuredProject = {
+  title: "Lunara",
+  description: "Currently working on Lunara as an ongoing personal project.",
+  status: "In Progress",
+  techStack: ["Next.js", "Firebase", "Tailwind"],
+  github: "https://github.com/Tanushree-RD/lunara",
+};
+
+const latestBlog = {
+  title: "Who Am I?",
+  link: "https://medium.com/@serotoninwave/who-am-i-9d31559bd223",
+  description:
+    "A personal reflection about how I went from preparing for NEET to exploring coding, design, fashion, and still figuring life out at 18.",
+  date: "Feb 28, 2026",
+  readTime: "2 min read",
+};
 
 export default function Home() {
   return (
@@ -111,7 +129,7 @@ export default function Home() {
       </FadeInSection>
 
       {/* ───────── Socials ───────── */}
-      <section className="mb-10">
+      <FadeInSection className="mb-16">
         <h2 className="mb-5 text-xs font-semibold uppercase tracking-widest text-accent-dark">
           Socials
         </h2>
@@ -129,7 +147,101 @@ export default function Home() {
             </a>
           ))}
         </div>
-      </section>
+      </FadeInSection>
+
+      {/* ───────── Featured Project ───────── */}
+      <FadeInSection className="mb-16">
+        <h2 className="mb-5 text-xs font-semibold uppercase tracking-widest text-accent-dark">
+          Featured Project
+        </h2>
+        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6">
+          {/* Project Card — matches /experiments card style */}
+          <article className="group flex-1 border border-border p-5 transition-all duration-300 ease-out hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-[0_8px_30px_rgba(232,137,158,0.25)]">
+            <div className="flex items-center gap-3">
+              <h3 className="text-sm font-semibold text-foreground">
+                {featuredProject.title}
+              </h3>
+              {featuredProject.status && (
+                <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[10px] font-medium text-accent-dark">
+                  {featuredProject.status}
+                </span>
+              )}
+            </div>
+            <p className="mt-2 text-xs leading-relaxed text-muted">
+              {featuredProject.description}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {featuredProject.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-border px-2 py-0.5 text-[10px] text-foreground"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="mt-3">
+              <a
+                href={featuredProject.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
+              >
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          {/* Show More button */}
+          <Link
+            href="/experiments"
+            className="shrink-0 rounded-full border border-border px-5 py-2 text-xs font-medium text-foreground transition-all duration-200 hover:border-accent-dark/40 hover:text-accent-dark hover:shadow-[0_4px_16px_rgba(232,137,158,0.2)]"
+          >
+            Show More →
+          </Link>
+        </div>
+      </FadeInSection>
+
+      {/* ───────── Latest Blog ───────── */}
+      <FadeInSection className="mb-10">
+        <h2 className="mb-5 text-xs font-semibold uppercase tracking-widest text-accent-dark">
+          Latest Blog
+        </h2>
+        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6">
+          {/* Blog Card — matches /blogs card style */}
+          <a
+            href={latestBlog.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block flex-1 border border-border p-5 no-underline transition-all duration-300 ease-out hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-[0_8px_30px_rgba(232,137,158,0.25)]"
+          >
+            <article>
+              <div className="flex items-center gap-2 text-[11px] text-muted">
+                <time>{latestBlog.date}</time>
+                <span>·</span>
+                <span>{latestBlog.readTime}</span>
+              </div>
+              <h3 className="mt-2 text-sm font-semibold text-foreground">
+                {latestBlog.title}
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted">
+                {latestBlog.description}
+              </p>
+              <span className="mt-3 inline-block text-xs text-accent-dark underline decoration-border underline-offset-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                Read on Medium →
+              </span>
+            </article>
+          </a>
+
+          {/* Show More button */}
+          <Link
+            href="/blogs"
+            className="shrink-0 rounded-full border border-border px-5 py-2 text-xs font-medium text-foreground transition-all duration-200 hover:border-accent-dark/40 hover:text-accent-dark hover:shadow-[0_4px_16px_rgba(232,137,158,0.2)]"
+          >
+            Show More →
+          </Link>
+        </div>
+      </FadeInSection>
     </main>
   );
 }

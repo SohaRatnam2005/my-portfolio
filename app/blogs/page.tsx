@@ -3,30 +3,25 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Blogs | Tanushree RD",
     description:
-        "Thoughts, tutorials, and insights on web development and tech.",
+        "Personal reflections, musings, and thoughts on life — published on Medium.",
 };
 
 const blogs = [
     {
-        title: "Getting Started with Next.js App Router",
-        excerpt:
-            "An in-depth guide to understanding the new App Router in Next.js — layouts, loading states, and server components explained.",
-        date: "Jan 15, 2026",
-        readTime: "6 min read",
+        title: "Who Am I?",
+        link: "https://medium.com/@serotoninwave/who-am-i-9d31559bd223",
+        description:
+            "A personal reflection about how I went from preparing for NEET to exploring coding, design, fashion, and still figuring life out at 18.",
+        date: "Feb 28, 2026",
+        readTime: "2 min read",
     },
     {
-        title: "Why TypeScript Is Worth the Learning Curve",
-        excerpt:
-            "Exploring the benefits of TypeScript in large codebases and how it improves developer experience and code reliability.",
-        date: "Dec 28, 2025",
-        readTime: "4 min read",
-    },
-    {
-        title: "Building Responsive UIs with Tailwind CSS",
-        excerpt:
-            "Tips and patterns for creating beautiful, mobile-first layouts using utility-first CSS with Tailwind.",
-        date: "Nov 10, 2025",
-        readTime: "5 min read",
+        title: "No One Will Remember, So Why Take Life So Seriously?",
+        link: "https://medium.com/@serotoninwave/no-one-will-remember-so-why-take-life-so-seriously-5b7dfb646b43",
+        description:
+            "A short reflection on why overthinking mistakes is pointless when most things won't matter in the long run.",
+        date: "Aug 24, 2025",
+        readTime: "2 min read",
     },
 ];
 
@@ -39,37 +34,42 @@ export default function BlogsPage() {
                     Blog
                 </h1>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
-                    Thoughts on web development, design patterns, and the tools I use
-                    day-to-day.
+                    Personal reflections and musings — published on Medium.
                 </p>
             </header>
 
             {/* Blog List */}
             <section aria-label="Blog posts" className="flex flex-col gap-4">
                 {blogs.map((blog) => (
-                    <article
+                    <a
                         key={blog.title}
-                        className="group cursor-pointer border border-border p-5 transition-all duration-200 hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-lg hover:shadow-shadow"
+                        href={blog.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block border border-border p-5 no-underline transition-all duration-300 ease-out hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-[0_8px_30px_rgba(232,137,158,0.25)]"
                     >
-                        <div className="flex items-center gap-2 text-[11px] text-muted">
-                            <time>{blog.date}</time>
-                            <span>·</span>
-                            <span>{blog.readTime}</span>
-                        </div>
+                        <article>
+                            <div className="flex items-center gap-2 text-[11px] text-muted">
+                                <time>{blog.date}</time>
+                                <span>·</span>
+                                <span>{blog.readTime}</span>
+                            </div>
 
-                        <h2 className="mt-2 text-sm font-semibold text-foreground">
-                            {blog.title}
-                        </h2>
-                        <p className="mt-2 text-xs leading-relaxed text-muted">
-                            {blog.excerpt}
-                        </p>
+                            <h2 className="mt-2 text-sm font-semibold text-foreground">
+                                {blog.title}
+                            </h2>
+                            <p className="mt-2 text-xs leading-relaxed text-muted">
+                                {blog.description}
+                            </p>
 
-                        <span className="mt-3 inline-block text-xs text-accent-dark underline decoration-border underline-offset-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                            Read more →
-                        </span>
-                    </article>
+                            <span className="mt-3 inline-block text-xs text-accent-dark underline decoration-border underline-offset-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                                Read on Medium →
+                            </span>
+                        </article>
+                    </a>
                 ))}
             </section>
         </main>
     );
 }
+
