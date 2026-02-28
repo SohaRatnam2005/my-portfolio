@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -19,9 +20,19 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="text-sm tracking-tight text-foreground transition-colors hover:text-accent-dark"
+                    className="flex items-center gap-2 text-sm tracking-tight text-foreground transition-colors hover:text-accent-dark"
                 >
-                    tanushree rd
+                    <Image
+                        src="/cat.gif"
+                        alt="logo"
+                        width={32}
+                        height={32}
+                        className="object-contain"
+                        unoptimized
+                    />
+                    <span className="text-sm font-medium tracking-wide">
+                        tanushree rd
+                    </span>
                 </Link>
 
                 {/* Navigation Links */}
@@ -33,8 +44,8 @@ export default function Navbar() {
                                 <Link
                                     href={href}
                                     className={`relative text-xs tracking-tight transition-colors after:absolute after:bottom-[-4px] after:left-0 after:h-[1.5px] after:bg-foreground after:transition-all after:duration-300 after:ease-out ${isActive
-                                            ? "text-foreground after:w-full"
-                                            : "text-muted hover:text-foreground after:w-0 hover:after:w-full"
+                                        ? "text-foreground after:w-full"
+                                        : "text-muted hover:text-foreground after:w-0 hover:after:w-full"
                                         }`}
                                 >
                                     {label}
