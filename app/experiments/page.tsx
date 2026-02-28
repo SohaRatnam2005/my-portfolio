@@ -15,22 +15,25 @@ const experiments = [
         github: "https://github.com/Tanushree-RD/lunara",
     },
     {
-        title: "AI Job Checker",
+        title: "Vibe Quiz",
         description:
-            "A basic project exploring AI-based resume and job description comparison.",
-        github: "https://github.com/Tanushree-RD/ai-job-checker",
+            "A fun, pastel-themed personality quiz that tells you your Gen Z \"vibe\".",
+        github: "https://github.com/Tanushree-RD/vibe-quiz",
+        live: "https://tanushree-rd.github.io/vibe-quiz/",
     },
     {
         title: "Particle Playground",
         description:
-            "A simple interactive particle simulation built for visual experimentation.",
+            "An interactive particle animation playground where colorful particles burst and connect based on mouse movement.",
         github: "https://github.com/Tanushree-RD/particle-playground",
+        live: "https://tanushree-rd.github.io/particle-playground/",
     },
     {
-        title: "Vibe Quiz",
+        title: "AI Job Checker",
         description:
-            "A fun quiz-based web app built as a learning project.",
-        github: "https://github.com/Tanushree-RD/vibe-quiz",
+            "A lightweight web app that estimates the likelihood of AI automation for a given job role.",
+        github: "https://github.com/Tanushree-RD/ai-job-checker",
+        live: "https://ai-job-checker.vercel.app/",
     },
 ];
 
@@ -69,7 +72,7 @@ export default function ExperimentsPage() {
                             {experiment.description}
                         </p>
 
-                        <div className="mt-3">
+                        <div className="mt-3 flex items-center gap-4">
                             <Link
                                 href={experiment.github}
                                 target="_blank"
@@ -78,6 +81,16 @@ export default function ExperimentsPage() {
                             >
                                 GitHub
                             </Link>
+                            {experiment.live && (
+                                <Link
+                                    href={experiment.live}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
+                                >
+                                    Live Demo
+                                </Link>
+                            )}
                         </div>
                     </article>
                 ))}
