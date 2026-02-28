@@ -35,7 +35,7 @@ const socials: { label: string; href: string; icon: ReactElement }[] = [
     icon: <FiLinkedin />,
   },
   { label: "Twitter", href: "https://x.com/serotoninwave", icon: <FiTwitter /> },
-  { label: "Instagram", href: "https://www.instagram.com/tanu_shree_rd", icon: <FiInstagram /> },
+  { label: "Instagram", href: "https://youtu.be/dQw4w9WgXcQ?si=65wHgXVvTc8O-jQJ", icon: <FiInstagram /> },
   { label: "Email", href: "mailto:tanushreer021@gmail.com", icon: <FiMail /> },
 ];
 
@@ -75,22 +75,23 @@ export default function Home() {
         <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-dark">
           About
         </h2>
-        <p className="text-sm leading-relaxed text-muted">
-          CS undergraduate who enjoys making websites look clean and feel good
-          to use. Currently learning backend + web3 mostly with Next.js, Node
-          and Tailwind. Also working with Python, DSA and exploring AI/ML.
+        <p className="text-sm leading-relaxed text-muted lowercase">
+          CS undergrad obsessed with making things look clean and feel right.
+          Currently digging into Backend and Web3, building stuff, learning DSA,
+          and exploring AI/ML.
         </p>
       </FadeInSection>
 
       {/* ───────── Other than tech ───────── */}
       <FadeInSection className="mb-14">
         <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-dark">
-          Other than tech
+          Beyond Tech
         </h2>
-        <p className="text-sm leading-relaxed text-muted">
-          Other than tech, I&apos;m also into fashion designing and upcycling
-          clothes. I enjoy makeup as a creative skill, and spend my free time
-          reading, playing football, or a game of chess.
+        <p className="text-sm leading-relaxed text-muted lowercase">
+          When I&apos;m AFK, I&apos;m usually into fashion design, upcycling clothes,
+          or experimenting with makeup — basically anything where I can create
+          something new. I&apos;m also probably reading something, singing randomly,
+          getting a game of football in, or playing chess once in a while.
         </p>
       </FadeInSection>
 
@@ -99,14 +100,14 @@ export default function Home() {
         <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-dark">
           Education
         </h2>
-        <p className="text-sm font-medium text-foreground">
+        <p className="text-sm font-medium text-foreground lowercase">
           St Joseph Engineering College
         </p>
-        <p className="mt-1 text-sm leading-relaxed text-muted">
+        <p className="mt-1 text-sm leading-relaxed text-muted lowercase">
           B.Tech in Computer Science and Business Systems
         </p>
-        <p className="mt-1 text-xs text-muted">2025 – 2029</p>
-        <p className="mt-1 text-xs text-muted">CGPA: Yet to be announced</p>
+        <p className="mt-1 text-xs text-muted lowercase">2025 – 2029</p>
+        <p className="mt-1 text-xs text-muted lowercase">CGPA: Yet to be announced</p>
       </FadeInSection>
 
       {/* ───────── Tech Stack ───────── */}
@@ -167,7 +168,7 @@ export default function Home() {
                 </span>
               )}
             </div>
-            <p className="mt-2 text-xs leading-relaxed text-muted">
+            <p className="mt-2 text-xs leading-relaxed text-muted lowercase">
               {featuredProject.description}
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -224,7 +225,7 @@ export default function Home() {
               <h3 className="mt-2 text-sm font-semibold text-foreground">
                 {latestBlog.title}
               </h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted">
+              <p className="mt-2 text-xs leading-relaxed text-muted lowercase">
                 {latestBlog.description}
               </p>
               <span className="mt-3 inline-block text-xs text-accent-dark underline decoration-border underline-offset-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
