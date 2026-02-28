@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -12,12 +13,15 @@ const experiments = [
         description:
             "Currently working on Lunara as an ongoing personal project.",
         status: "In Progress",
+        techStack: ["Next.js", "Firebase", "Tailwind"],
         github: "https://github.com/Tanushree-RD/lunara",
     },
     {
         title: "Vibe Quiz",
         description:
             "A fun, pastel-themed personality quiz that tells you your Gen Z \"vibe\".",
+        techStack: ["HTML", "CSS", "JavaScript"],
+        image: "/projects/vibequiz.png",
         github: "https://github.com/Tanushree-RD/vibe-quiz",
         live: "https://tanushree-rd.github.io/vibe-quiz/",
     },
@@ -25,6 +29,8 @@ const experiments = [
         title: "Particle Playground",
         description:
             "An interactive particle animation playground where colorful particles burst and connect based on mouse movement.",
+        techStack: ["HTML", "CSS", "JavaScript", "Canvas API"],
+        image: "/projects/particle.png",
         github: "https://github.com/Tanushree-RD/particle-playground",
         live: "https://tanushree-rd.github.io/particle-playground/",
     },
@@ -32,6 +38,8 @@ const experiments = [
         title: "AI Job Checker",
         description:
             "A lightweight web app that estimates the likelihood of AI automation for a given job role.",
+        techStack: ["HTML", "CSS", "JavaScript"],
+        image: "/projects/aijob.png",
         github: "https://github.com/Tanushree-RD/ai-job-checker",
         live: "https://ai-job-checker.vercel.app/",
     },
@@ -52,45 +60,79 @@ export default function ExperimentsPage() {
             </header>
 
             {/* Projects List */}
-            <section aria-label="Projects list" className="flex flex-col gap-4">
+            <section aria-label="Projects list" className="flex flex-col gap-6">
                 {experiments.map((experiment) => (
                     <article
                         key={experiment.title}
-                        className="border border-border p-5 transition-all duration-200 hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-lg hover:shadow-shadow"
+                        className="group overflow-hidden rounded-lg border border-border transition-all duration-300 ease-out hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-[0_8px_30px_rgba(232,137,158,0.25)]"
                     >
-                        <div className="flex items-center gap-3">
-                            <h2 className="text-sm font-semibold text-foreground">
-                                {experiment.title}
-                            </h2>
-                            {experiment.status && (
-                                <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[10px] font-medium text-accent-dark">
-                                    {experiment.status}
-                                </span>
-                            )}
-                        </div>
-                        <p className="mt-2 text-xs leading-relaxed text-muted">
-                            {experiment.description}
-                        </p>
+                        {/* Preview Image */}
+                        {experiment.image && (
+                            <div className="relative w-full h-48 overflow-hidden rounded-xl">
+                                <Image
+                                    src={experiment.image}
+                                    alt={`${experiment.title} preview`}
+                                    fill
+                                    className="object-cover transition-transform duration-300 hover:scale-105"
+                                    sizes="(max-width: 672px) 100vw, 672px"
+                                />
+                            </div>
+                        )}
 
-                        <div className="mt-3 flex items-center gap-4">
-                            <Link
-                                href={experiment.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
-                            >
-                                GitHub
-                            </Link>
-                            {experiment.live && (
+                        {/* Card Content */}
+                        <div className="p-5">
+                            {/* Title + Status */}
+                            <div className="flex items-center gap-3">
+                                <h2 className="text-sm font-semibold text-foreground">
+                                    {experiment.title}
+                                </h2>
+                                {experiment.status && (
+                                    <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[10px] font-medium text-accent-dark">
+                                        {experiment.status}
+                                    </span>
+                                )}
+                            </div>
+
+                            {/* Description */}
+                            <p className="mt-2 text-xs leading-relaxed text-muted">
+                                {experiment.description}
+                            </p>
+
+                            {/* Tech Stack Badges */}
+                            {experiment.techStack && experiment.techStack.length > 0 && (
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                    {experiment.techStack.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="rounded-full bg-accent-soft/60 px-2.5 py-0.5 text-[10px] font-medium text-accent-dark transition-colors duration-200 hover:bg-accent-soft"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            )}
+
+                            {/* Links */}
+                            <div className="mt-4 flex items-center gap-4">
                                 <Link
-                                    href={experiment.live}
+                                    href={experiment.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
                                 >
-                                    Live Demo
+                                    GitHub
                                 </Link>
-                            )}
+                                {experiment.live && (
+                                    <Link
+                                        href={experiment.live}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
+                                    >
+                                        Live Demo
+                                    </Link>
+                                )}
+                            </div>
                         </div>
                     </article>
                 ))}
@@ -98,4 +140,3 @@ export default function ExperimentsPage() {
         </main>
     );
 }
-
