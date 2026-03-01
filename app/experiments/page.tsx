@@ -17,6 +17,17 @@ const experiments = [
         github: "https://github.com/Tanushree-RD/lunara",
     },
     {
+        title: "iBallBooster",
+        description:
+            "Android application to wirelessly control speaker output using ESP32 via Bluetooth Serial Communication (SPP). Enables real-time volume and bass control by transmitting commands from mobile UI to microcontroller over Bluetooth.",
+        techStack: ["Kotlin", "Android SDK", "Bluetooth SPP", "ESP32"],
+        image: "/projects/iballbooster.png",
+        isMobileScreenshot: true,
+        github: "https://github.com/Tanushree-RD/iballbooster",
+        downloadApk:
+            "https://github.com/Tanushree-RD/iballbooster/releases/latest",
+    },
+    {
         title: "Vibe Quiz",
         description:
             "A fun, pastel-themed personality quiz that tells you your Gen Z \"vibe\".",
@@ -66,8 +77,23 @@ export default function ExperimentsPage() {
                         key={experiment.title}
                         className="group overflow-hidden rounded-lg border border-border transition-all duration-300 ease-out hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-[0_8px_30px_rgba(232,137,158,0.25)]"
                     >
-                        {/* Preview Image */}
-                        {experiment.image && (
+                        {/* Mobile Screenshot (portrait, centered — e.g. iBallBooster) */}
+                        {experiment.image && experiment.isMobileScreenshot && (
+                            <div className="flex justify-center bg-accent-soft/30 px-4 pt-5 pb-3">
+                                <div className="relative w-[180px] h-[370px] overflow-hidden rounded-lg sm:w-[200px] sm:h-[390px]">
+                                    <Image
+                                        src={experiment.image}
+                                        alt={`${experiment.title} mobile screenshot`}
+                                        fill
+                                        className="object-contain"
+                                        sizes="200px"
+                                    />
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Landscape Preview Image (existing projects) */}
+                        {experiment.image && !experiment.isMobileScreenshot && (
                             <div className="relative w-full h-48 overflow-hidden rounded-xl">
                                 <Image
                                     src={experiment.image}
@@ -120,8 +146,18 @@ export default function ExperimentsPage() {
                                     rel="noopener noreferrer"
                                     className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
                                 >
-                                    GitHub
+                                    GitHub →
                                 </Link>
+                                {experiment.downloadApk && (
+                                    <Link
+                                        href={experiment.downloadApk}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
+                                    >
+                                        Download APK →
+                                    </Link>
+                                )}
                                 {experiment.live && (
                                     <Link
                                         href={experiment.live}

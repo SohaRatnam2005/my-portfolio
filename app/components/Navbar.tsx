@@ -16,21 +16,21 @@ export default function Navbar() {
 
     return (
         <nav className="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-sm font-[family-name:var(--font-jetbrains)]">
-            <div className="mx-auto flex max-w-2xl items-center justify-between px-6 py-3">
+            <div className="mx-auto flex max-w-2xl items-center justify-between px-6 py-3 flex-nowrap">
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="flex items-center gap-2 text-sm tracking-tight text-foreground transition-colors hover:text-accent-dark"
+                    className="flex items-center gap-2 min-w-fit flex-shrink-0 text-sm tracking-tight text-foreground transition-colors hover:text-accent-dark"
                 >
                     <Image
                         src="/cat.gif"
                         alt="logo"
                         width={32}
                         height={32}
-                        className="object-contain"
-                        unoptimized
+                        className="h-5 sm:h-6 md:h-7 w-auto object-contain flex-shrink-0"
+                        unoptimized={true}
                     />
-                    <span className="text-sm font-medium tracking-wide">
+                    <span className="text-sm font-medium tracking-wide whitespace-nowrap">
                         tanushree rd
                     </span>
                 </Link>
