@@ -41,10 +41,11 @@ const socials: { label: string; href: string; icon: ReactElement }[] = [
 
 const featuredProject = {
   title: "Lunara",
-  description: "Currently working on Lunara as an ongoing personal project.",
+  description: "A privacy-first cycle intelligence platform that combines Flow, Mood, and Body tracking to generate adaptive insights based on personal health patterns.",
   status: "In Progress",
-  techStack: ["Next.js", "Firebase", "Tailwind"],
+  techStack: ["Next.js", "Firebase Auth", "Firestore", "TailwindCSS", "OpenAI API"],
   github: "https://github.com/Tanushree-RD/lunara",
+  live: "https://lunara-teal.vercel.app/",
 };
 
 const latestBlog = {
@@ -181,15 +182,25 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <div className="mt-3">
+            <div className="mt-3 flex items-center gap-4">
               <a
                 href={featuredProject.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
               >
-                GitHub
+                GitHub →
               </a>
+              {featuredProject.live && (
+                <a
+                  href={featuredProject.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
+                >
+                  Live Demo →
+                </a>
+              )}
             </div>
           </article>
 

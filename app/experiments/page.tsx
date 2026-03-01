@@ -11,10 +11,12 @@ const experiments = [
     {
         title: "Lunara",
         description:
-            "Currently working on Lunara as an ongoing personal project.",
+            "A privacy-first cycle intelligence platform that combines Flow, Mood, and Body tracking to generate adaptive insights based on personal health patterns. Enables users to log daily cycle data and receive AI-assisted forecasting through secure authentication and encrypted Firestore storage.",
         status: "In Progress",
-        techStack: ["Next.js", "Firebase", "Tailwind"],
+        techStack: ["Next.js", "Firebase Auth", "Firestore", "TailwindCSS", "OpenAI API"],
+        image: "/projects/lunara.png",
         github: "https://github.com/Tanushree-RD/lunara",
+        live: "https://lunara-teal.vercel.app/",
     },
     {
         title: "iBallBooster",
@@ -165,7 +167,7 @@ export default function ExperimentsPage() {
                                         rel="noopener noreferrer"
                                         className="text-xs text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
                                     >
-                                        Live Demo
+                                        Live Demo →
                                     </Link>
                                 )}
                             </div>
