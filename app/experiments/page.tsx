@@ -81,16 +81,14 @@ export default function ExperimentsPage() {
                     >
                         {/* Mobile Screenshot (portrait, centered — e.g. iBallBooster) */}
                         {experiment.image && experiment.isMobileScreenshot && (
-                            <div className="flex justify-center bg-accent-soft/30 px-4 pt-5 pb-3">
-                                <div className="relative w-[180px] h-[370px] overflow-hidden rounded-lg sm:w-[200px] sm:h-[390px]">
-                                    <Image
-                                        src={experiment.image}
-                                        alt={`${experiment.title} mobile screenshot`}
-                                        fill
-                                        className="object-contain"
-                                        sizes="200px"
-                                    />
-                                </div>
+                            <div className="flex justify-center items-center py-4">
+                                <Image
+                                    src={experiment.image}
+                                    alt={`${experiment.title} UI`}
+                                    width={220}
+                                    height={420}
+                                    className="rounded-xl object-contain shadow-md"
+                                />
                             </div>
                         )}
 
