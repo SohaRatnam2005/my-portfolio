@@ -19,19 +19,15 @@ export default function Navbar() {
             <div className="mx-auto flex max-w-2xl items-center justify-between px-6 py-3">
                 {/* Logo */}
                 <Link href="/" className="flex items-center">
-                    <div className="flex items-center gap-2 whitespace-nowrap">
-                        <Image
-                            src="/cat.gif"
-                            alt="cat"
-                            width={28}
-                            height={28}
-                            unoptimized
-                            className="object-contain"
-                        />
-                        <span className="text-sm font-medium tracking-wide leading-none">
-                            tanushree
-                        </span>
-                    </div>
+                    <Image
+                        src="/cat.gif"
+                        alt="Home"
+                        width={32}
+                        height={32}
+                        className="object-contain"
+                        unoptimized
+                        priority
+                    />
                 </Link>
 
                 {/* Navigation Links */}
