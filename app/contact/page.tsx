@@ -20,7 +20,7 @@ export default function ContactPage() {
             <section>
                 <p className="text-sm text-foreground">contact me at</p>
                 <a
-                    href="mailto:tanushreer021@gmail.com"
+                    href="mailto:soharatnam12095@gmail.com"
                     className="mt-2 inline-block text-sm text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
                 >
                     soharatnam12095@gmail.com
