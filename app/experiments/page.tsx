@@ -22,7 +22,7 @@ const experiments = [
       "Built an AI Text Summarizer using Next.js and Hugging Face APIs that generates concise summaries from long text or documents. Implemented server-side API routes and a responsive UI for smooth user interaction.",
     techStack: ["HuggingFace", "Tailwind", "Next.js"],
     image: "/projects/Summarizer.png",
-    github: "https://github.com/Tanushree-RD/iballbooster",
+    github: "https://github.com/SohaRatnam2005/Pdf_summarizer/tree/master",
   },
   {
     title: "Puzzle word",
@@ -30,7 +30,7 @@ const experiments = [
       'A fun, pastel-themed personality quiz that tells you your Gen Z "vibe".',
     techStack: ["HTML", "CSS", "JavaScript", "React"],
     image: "/projects/Puzzle Word.png",
-    github: "https://github.com/Tanushree-RD/vibe-quiz",
+    github: "https://github.com/SohaRatnam2005/Mini_Games/tree/main/Puzzle-Word",
   },
   {
     title: "AI Resume Analyzer",
