@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Contact | Tanushree RD",
+    title: "Contact |Soha ratnam",
     description: "Get in touch — I'd love to hear from you.",
 };
 
 const socials = [
-    { label: "github", href: "https://github.com/Tanushree-RD" },
+    { label: "github", href: "https://github.com/SohaRatnam2005" },
     {
         label: "linkedin",
-        href: "https://www.linkedin.com/in/tanushree-r-5a250a370",
+        href: "https://www.linkedin.com/in/soha-ratnam/",
     },
-    { label: "twitter", href: "https://x.com/serotoninwave" },
-    { label: "instagram", href: "https://youtu.be/dQw4w9WgXcQ?si=65wHgXVvTc8O-jQJ" },
+   
 ];
 
 export default function ContactPage() {
@@ -24,7 +23,7 @@ export default function ContactPage() {
                     href="mailto:tanushreer021@gmail.com"
                     className="mt-2 inline-block text-sm text-foreground underline decoration-border underline-offset-4 transition-colors hover:text-accent-dark hover:decoration-accent-dark"
                 >
-                    tanushreer021@gmail.com
+                    soharatnam12095@gmail.com
                 </a>
 
                 <p className="mt-10 text-sm text-foreground">or find me here:</p>

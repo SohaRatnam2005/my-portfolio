@@ -3,58 +3,55 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Projects | Tanushree RD",
+    title: "Projects | Soha Ratnam",
     description: "A collection of things I've built and explored.",
 };
 
 const experiments = [
     {
-        title: "Lunara",
+        title: "Food Recx",
         description:
-            "A privacy-first cycle intelligence platform that combines Flow, Mood, and Body tracking to generate adaptive insights based on personal health patterns. Enables users to log daily cycle data and receive AI-assisted forecasting through secure authentication and encrypted Firestore storage.",
-        status: "In Progress",
-        techStack: ["Next.js", "Firebase Auth", "Firestore", "TailwindCSS", "OpenAI API"],
-        image: "/projects/lunara.png",
-        github: "https://github.com/Tanushree-RD/lunara",
-        live: "https://lunara-teal.vercel.app/",
+            "Built a Food Recipe Web Application using the MERN stack that enables users to browse, add, and manage recipes. Implemented REST APIs with Node.js and Express, stored data in MongoDB, and created an interactive frontend using React",
+        techStack: ["MongoDb","React","Tailwind","Node","Express"],
+        image: "/projects/Screenshot 2026-03-05 212010.png",
+        github: "https://github.com/SohaRatnam2005/Food_Recipe",
+        
     },
     {
-        title: "iBallBooster",
+        title: "Summarizer",
         description:
-            "Android application to wirelessly control speaker output using ESP32 via Bluetooth Serial Communication (SPP). Enables real-time volume and bass control by transmitting commands from mobile UI to microcontroller over Bluetooth.",
-        techStack: ["Kotlin", "Android SDK", "Bluetooth SPP", "ESP32"],
-        image: "/projects/iballbooster.png",
-        isMobileScreenshot: true,
+            "Built an AI Text Summarizer using Next.js and Hugging Face APIs that generates concise summaries from long text or documents. Implemented server-side API routes and a responsive UI for smooth user interaction.",
+        techStack: ["HuggingFace", "Tailwind", "Next.js"],
+        image: "/projects/Summarizer.png",
         github: "https://github.com/Tanushree-RD/iballbooster",
-        downloadApk:
-            "https://github.com/Tanushree-RD/iballbooster/releases/latest",
+       
     },
     {
-        title: "Vibe Quiz",
+        title: "Puzzle word",
         description:
             "A fun, pastel-themed personality quiz that tells you your Gen Z \"vibe\".",
-        techStack: ["HTML", "CSS", "JavaScript"],
-        image: "/projects/vibequiz.png",
+        techStack: ["HTML", "CSS", "JavaScript" , "React"],
+        image: "/projects/Puzzle Word.png",
         github: "https://github.com/Tanushree-RD/vibe-quiz",
-        live: "https://tanushree-rd.github.io/vibe-quiz/",
     },
     {
-        title: "Particle Playground",
+        title: "AI Resume Analyzer",
         description:
-            "An interactive particle animation playground where colorful particles burst and connect based on mouse movement.",
-        techStack: ["HTML", "CSS", "JavaScript", "Canvas API"],
+            "Built an AI Resume Analyzer that allows users to upload PDF resumes and receive AI-generated feedback and resume scores. Implemented PDF text extraction with PDF.js and integrated AI models to provide structured suggestions and improvements.",
+        status: "in progress",
+        techStack: [ "Tailwind", "Next.js", "puter.js"],
         image: "/projects/particle.png",
-        github: "https://github.com/Tanushree-RD/particle-playground",
-        live: "https://tanushree-rd.github.io/particle-playground/",
+        github: " ",
+        
     },
     {
-        title: "AI Job Checker",
+        title: "Mini Projects",
         description:
-            "A lightweight web app that estimates the likelihood of AI automation for a given job role.",
+            "Built several mini web applications using React, HTML, CSS, and JavaScript, including a Tic Tac Toe game with dynamic state management and a Weather App that fetches real-time data from external APIs. These projects helped strengthen frontend development skills and understanding of component-based UI design.",
         techStack: ["HTML", "CSS", "JavaScript"],
-        image: "/projects/aijob.png",
-        github: "https://github.com/Tanushree-RD/ai-job-checker",
-        live: "https://ai-job-checker.vercel.app/",
+        image: "/projects/Screenshot 2026-03-05 215443.png",
+        github: "https://github.com/SohaRatnam2005/Mini_Games",
+        
     },
 ];
 

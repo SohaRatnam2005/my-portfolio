@@ -13,7 +13,7 @@ import FadeInSection from "./components/FadeInSection";
 
 const techStack = [
   "c",
-  "c++",
+  "Java",
   "html",
   "css",
   "javascript",
@@ -21,31 +21,39 @@ const techStack = [
   "nextjs",
   "node",
   "tailwind",
-  "firebase",
+  "MongoDB",
   "python",
   "git",
   "github",
 ];
 
 const socials: { label: string; href: string; icon: ReactElement }[] = [
-  { label: "GitHub", href: "https://github.com/Tanushree-RD", icon: <FiGithub /> },
+  {
+    label: "GitHub",
+    href: "https://github.com/SohaRatnam2005",
+    icon: <FiGithub />,
+  },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/tanushree-r-5a250a370",
+    href: "https://www.linkedin.com/in/soha-ratnam",
     icon: <FiLinkedin />,
   },
-  { label: "Twitter", href: "https://x.com/serotoninwave", icon: <FiTwitter /> },
-  { label: "Instagram", href: "https://youtu.be/dQw4w9WgXcQ?si=65wHgXVvTc8O-jQJ", icon: <FiInstagram /> },
-  { label: "Email", href: "mailto:tanushreer021@gmail.com", icon: <FiMail /> },
+  { label: "Email", href: "mailto:soharatnam12095@gmail.com", icon: <FiMail /> },
 ];
 
 const featuredProject = {
-  title: "Lunara",
-  description: "A privacy-first cycle intelligence platform that combines Flow, Mood, and Body tracking to generate adaptive insights based on personal health patterns.",
+  title: "AI Resume Analyzer",
+  description:
+    "A privacy-first cycle intelligence platform that combines Flow, Mood, and Body tracking to generate adaptive insights based on personal health patterns.",
   status: "In Progress",
-  techStack: ["Next.js", "Firebase Auth", "Firestore", "TailwindCSS", "OpenAI API"],
-  github: "https://github.com/Tanushree-RD/lunara",
-  live: "https://lunara-teal.vercel.app/",
+  techStack: [
+    "React.js",
+    "Puter.js",
+    "TailwindCSS",
+    "OpenAI API",
+  ],
+  github: "",
+  live: "",
 };
 
 const latestBlog = {
@@ -63,8 +71,7 @@ export default function Home() {
       {/* ───────── Intro ───────── */}
       <section className="mb-14">
         <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl">
-          Hyy I&apos;m Tanushree{" "}
-          <span className="text-muted">aka sero</span>
+          Hyy I&apos;m Soha Ratnam{" "}
         </h1>
         <p className="mt-4 text-base font-medium leading-relaxed text-foreground md:text-lg">
           CS Undergraduate
@@ -78,8 +85,7 @@ export default function Home() {
         </h2>
         <p className="text-sm leading-relaxed text-muted lowercase">
           CS undergrad obsessed with making things look clean and feel right.
-          Currently digging into Backend and Web3, building stuff, learning DSA,
-          and exploring AI/ML.
+          Currently digging into Web Dev and Data Structure & algorithms
         </p>
       </FadeInSection>
 
@@ -89,10 +95,10 @@ export default function Home() {
           Beyond Tech
         </h2>
         <p className="text-sm leading-relaxed text-muted lowercase">
-          When I&apos;m AFK, I&apos;m usually into fashion design, upcycling clothes,
-          or experimenting with makeup — basically anything where I can create
-          something new. I&apos;m also probably reading something, singing randomly,
-          getting a game of football in, or playing chess once in a while.
+          When I’m AFK, you’ll usually find me doing Pilates, reading something
+          interesting, or getting lost in art and creative projects. I enjoy
+          anything that lets me slow down, think deeply, and create something
+          meaningful.
         </p>
       </FadeInSection>
 
@@ -101,14 +107,23 @@ export default function Home() {
         <h2 className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-dark">
           Education
         </h2>
-        <p className="text-sm font-medium text-foreground lowercase">
-          St Joseph Engineering College
+
+        <p className="text-sm font-medium text-foreground">
+          JSS Academy of Technical Education
         </p>
-        <p className="mt-1 text-sm leading-relaxed text-muted lowercase">
-          Bachelor of Engineering in Computer Science and Business Systems
+        <p className="mt-1 text-sm leading-relaxed text-muted">
+          Bachelor of Technology (B.Tech) in Computer Science
         </p>
-        <p className="mt-1 text-xs text-muted lowercase">2025 – 2029</p>
-        <p className="mt-1 text-xs text-muted lowercase">CGPA: Yet to be announced</p>
+        <p className="mt-1 text-xs text-muted">2023 – 2027</p>
+        <p className="mt-1 text-xs text-muted">Current CGPA: 8.9</p>
+
+        <div className="mt-4">
+          <p className="text-sm font-medium text-foreground">
+            Meerut Public Girls' School
+          </p>
+          <p className="mt-1 text-xs text-muted">Class XII – 94%</p>
+          <p className="mt-1 text-xs text-muted">Class X – 95%</p>
+        </div>
       </FadeInSection>
 
       {/* ───────── Tech Stack ───────── */}
@@ -215,45 +230,7 @@ export default function Home() {
       </FadeInSection>
 
       {/* ───────── Latest Blog ───────── */}
-      <FadeInSection className="mb-10">
-        <h2 className="mb-5 text-xs font-semibold uppercase tracking-widest text-accent-dark">
-          Latest Blog
-        </h2>
-        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-6">
-          {/* Blog Card — matches /blogs card style */}
-          <a
-            href={latestBlog.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block flex-1 border border-border p-5 no-underline transition-all duration-300 ease-out hover:scale-[1.02] hover:border-accent-dark/40 hover:shadow-[0_8px_30px_rgba(232,137,158,0.25)]"
-          >
-            <article>
-              <div className="flex items-center gap-2 text-[11px] text-muted">
-                <time>{latestBlog.date}</time>
-                <span>·</span>
-                <span>{latestBlog.readTime}</span>
-              </div>
-              <h3 className="mt-2 text-sm font-semibold text-foreground">
-                {latestBlog.title}
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted lowercase">
-                {latestBlog.description}
-              </p>
-              <span className="mt-3 inline-block text-xs text-accent-dark underline decoration-border underline-offset-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                Read on Medium →
-              </span>
-            </article>
-          </a>
-
-          {/* Show More button */}
-          <Link
-            href="/blogs"
-            className="shrink-0 rounded-full border border-border px-5 py-2 text-xs font-medium text-foreground transition-all duration-200 hover:border-accent-dark/40 hover:text-accent-dark hover:shadow-[0_4px_16px_rgba(232,137,158,0.2)]"
-          >
-            Show More →
-          </Link>
-        </div>
-      </FadeInSection>
+      
     </main>
   );
 }

@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tanushree RD | Portfolio",
+  title: "Soha Ratnam| Portfolio",
   description:
-    "Tanushree RD — CS undergrad crafting beautiful and functional web apps.",
+    "Soha Ratnam— CS undergrad crafting beautiful and functional web apps.",
 };
 
 export default function RootLayout({
