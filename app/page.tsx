@@ -67,7 +67,7 @@ const latestBlog = {
 
 export default function Home() {
   return (
-    <main className="mx-auto min-h-screen max-w-2xl px-6 py-16 font-[family-name:var(--font-jetbrains)]">
+    <main className="mx-auto min-h-screen max-w-2xl px-6 py-16 ">
       {/* ───────── Intro ───────── */}
       <section className="mb-14">
         <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl">
