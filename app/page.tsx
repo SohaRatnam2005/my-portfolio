@@ -38,7 +38,11 @@ const socials: { label: string; href: string; icon: ReactElement }[] = [
     href: "https://www.linkedin.com/in/soha-ratnam",
     icon: <FiLinkedin />,
   },
-  { label: "Email", href: "mailto:soharatnam12095@gmail.com", icon: <FiMail /> },
+  {
+    label: "Email",
+    href: "mailto:soharatnam12095@gmail.com",
+    icon: <FiMail />,
+  },
 ];
 
 const featuredProject = {
@@ -46,12 +50,7 @@ const featuredProject = {
   description:
     "A privacy-first cycle intelligence platform that combines Flow, Mood, and Body tracking to generate adaptive insights based on personal health patterns.",
   status: "In Progress",
-  techStack: [
-    "React.js",
-    "Puter.js",
-    "TailwindCSS",
-    "OpenAI API",
-  ],
+  techStack: ["React.js", "Puter.js", "TailwindCSS", "OpenAI API"],
   github: "",
   live: "",
 };
@@ -71,7 +70,7 @@ export default function Home() {
       {/* ───────── Intro ───────── */}
       <section className="mb-14">
         <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl">
-          Hyy I&apos;m Soha Ratnam{" "}
+          Hi I&apos;m Soha Ratnam{" "}
         </h1>
         <p className="mt-4 text-base font-medium leading-relaxed text-foreground md:text-lg">
           CS Undergraduate
@@ -144,6 +143,7 @@ export default function Home() {
           </div>
         </div>
       </FadeInSection>
+      
 
       {/* ───────── Socials ───────── */}
       <FadeInSection className="mb-16">
@@ -230,7 +230,6 @@ export default function Home() {
       </FadeInSection>
 
       {/* ───────── Latest Blog ───────── */}
-      
     </main>
   );
 }
